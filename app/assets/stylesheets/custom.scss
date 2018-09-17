@@ -1,0 +1,422 @@
+
+@import "bootstrap";
+
+
+html,body,div,ul,li,h1,h2,h3,h4,h5,h6,p,th,td , { 
+    margin:0;
+    padding:0;
+    font-family: "Quicksand", "Arial";
+ }
+
+  * {
+    box-sizing: border-box;
+}
+
+h4 {
+   margin-top:0.5em;
+   color: #635869; /*dark purple*/
+   font-family: "Quicksand", "Arial";
+   margin-bottom: 1em;
+    }
+   
+ /*alternative h4 for heavy text pages e.g. Attend.html*/  
+.Alth4 {
+   font-style: italic;
+   font-weight: bold;
+   margin-bottom: 0;
+   }
+   
+   /*for hr used to underline titles as opposed to section breaks on whatson page*/
+.TitleUnderline{
+   margin-top: 0.1rem;
+   margin-bottom: 1rem;
+   color: #635869; /*dark purple*/
+   border-top: 3px solid #635869;
+}
+   
+h5 {
+   color: #707070;
+   font-family: "Quicksand", "Arial";
+   font-weight: bold;
+  }
+ 
+h6 {
+   font-family: "Quicksand", "Arial";
+    }
+	 
+/*p {
+   font-size: 1em;
+   color: #707070;
+   font-family: "Quicksand", "Arial";
+   text-align:justify;  
+   text-justify:auto;
+ }*/
+ 
+ .GeneralText {
+  /* font-size: 1em;*/
+   font-size: 0.75em;
+   color: #707070;
+   font-family: "Quicksand", "Arial";
+   text-align:justify;
+   text-justify:auto;
+ }
+ 
+ @media (min-width: 768px) {
+	.GeneralText {
+    font-size: 0.9em;
+	}
+ }
+ 
+ .ClassTickTable {
+   background-color: #dddddd;
+   border-spacing: 0;
+   border-top-right-radius: 0.6em;
+   border-top-left-radius: 0.6em;
+   font-size: 0.8em;
+   color: #707070;
+   font-family: "Quicksand", "Arial";
+   margin-bottom:1.5em;
+ }
+ 
+ @media (min-width: 768px) {
+	.ClassTickTable {
+    font-size: 1em;
+	}
+ }
+ 
+ .ClassTickTable td {
+	border: white solid 0.06em;
+   padding: 0 0.4vw 0 0.4vw;
+    font-weight: bold;
+ }
+
+ .ClassTickTable th { 
+   border: white solid 0.06em;
+   text-align: left;
+   padding: 0 0.4vw 0 0.4vw;
+  /* font-weight: bold;*/
+   color: #707070;
+   font-size: 0.9em;
+ }
+ 
+ .ClassPhoto {
+  display: block;
+  max-width:95%;
+  }
+  
+  .ScheduleTable {
+   background-color: #dddddd;
+   border-spacing: 0;
+   border-top-right-radius: 0.6em;
+   border-top-left-radius: 0.6em;
+   font-size: 0.8em;
+   color: #707070;
+   font-family: "Quicksand", "Arial";
+   }
+   
+   @media (min-width: 992px) {
+	.ScheduleTable {
+    font-size: 1em;
+	}
+ }
+   
+  td {
+   border: white solid 0.06em;
+   padding: 0.4em 0.8em 0.4em 0.4em;
+ }
+ 
+ .longtd {
+   border: white solid 0.06em;
+   padding: 0.4em 0.4em 0.4em 0.4em;
+ }
+ 
+ th {
+   border: white solid 0.06em;
+   text-align: left;
+   padding: 0.4em 0.8em 0.4em 0.4em;
+   font-weight: bold;
+   color: black
+ }
+ 
+ .AllClassBenefitsTable {
+   background-color: #dddddd;
+   border-spacing: 0;
+   border-top-right-radius: 0.6em;
+   border-top-left-radius: 0.6em;
+   font-size: 0.8em;
+   color: #707070;
+   font-family: "Quicksand", "Arial";
+   margin: auto;
+   margin-top:1em;
+ }
+ 
+ .AllClassBenefitsTable td {
+	padding: 0.4em 0.8vw 0.4em 0.4vw;
+    }
+
+ .AllClassBenefitsTable th { 
+ 	padding: 0.4em 0.8em 0.4em 0.4em;
+ }
+ 
+ .Trademark {
+   font-size:65%;
+   vertical-align:top;
+ }
+   
+ .SocMedFoot {
+  display:block;  /*changed this from inline-block, otherwise got shifted relative to the gallery div on the gallery page */
+  background-color: white;
+  list-style: none;
+  margin-top:1em;
+  text-align:center;
+  margin-right:0;
+  margin-left:0;
+  padding-left:0;
+  padding-right:0;
+ }
+ 
+ .SocMedFoot li{
+  display: inline-block;
+  padding: 0 0.3em 0.5em 0;
+   }
+  
+  hr{
+    border-width: 3px;
+}
+
+.StudioSlides {
+   display: none;
+   max-width:95%;
+   margin: 0 0 0 0;
+ }
+ 
+  /*START: section relates to CONTACT*/
+  
+ .ContactTable {
+   background-color: #dddddd;
+   border-spacing: 0;
+   border-top-right-radius: 0.6em;
+   border-top-left-radius: 0.6em;
+   font-size: 1em;
+   color: #707070;
+   font-family: "Quicksand", "Arial";
+  /* margin-top: 60px;
+  margin-bottom:20px;*/
+  margin-left:1em;
+  margin-top:0;
+ }
+ 
+ .ContactTable td {
+   border: white solid 1px;
+   padding: 0.8em 0.4em 0.8em 0.4em;
+ }
+ 
+ .ContactTable th {
+   border: white solid 1px;
+   text-align: left;
+   padding: 0.8em 0.4em 0.8em 0.4em;
+   font-weight: bold;
+   color: black
+ }
+  /*END: section relates to CONTACT*/
+  
+/*START: section relates to TERMS where navigation bar not wanted but logo wanted*/
+  
+ .SpaceLogo {
+ display: block;
+ max-width:100%;
+ margin:auto;
+ /*new for superimpose*/
+ position:relative;
+ }
+  
+ /*END: section relates to TERMS*/
+ 
+ /*START: section relates to Space Logo in navbar*/
+.Logonavbar {
+width:150px;
+}
+
+@media (min-width: 576px) {
+	.Logonavbar {
+	width:170px;
+	}
+}
+	
+ 
+ /*remove padding from logo in navbar so it fits tightly*/
+.navbar-brand {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+/*remove padding from navbar so logo fits tightly*/
+.navbar {
+  padding: 0 1rem;
+}
+
+/*for Text Links - uses bootstrap colours for hover etc...*/
+.btn-generaltext {
+  white-space: normal;
+  line-height: 1.25;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size:0.9em;
+  border-radius: 0.25rem;
+  background-color: white;
+  color:#635869;
+  border-color: #635869;
+}
+
+
+
+
+
+/*addiitonal CSS for homepage*/
+  .carousel-indicators {
+  	width: 60%;
+	bottom:-20px;
+	left: 50%;
+  	margin-left: -30%;
+  	}
+
+	
+.carousel-indicators li {
+  	width: 10px;
+   	height: 10px;
+   	border-radius: 50%;
+    box-shadow: rgba(0,0,0,0.5) 0 0 2px;
+   	cursor: pointer;
+	background-color: #635869;
+}
+
+.carousel-indicators .active {
+  	background-color: #000000;
+	}
+	
+
+.carousel-controls{
+ position:relative; 
+  width:200px;
+  margin:0 auto;
+  bottom:-20px;
+}
+
+/*change colour of arrows on next & previous fill='%23fff' to fill='%23000' for black*/
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.carousel-caption {
+  position: relative;
+  right:0%;
+  left:0%;
+   color: black;
+  /*left:12.5%;*/ /*as image is 75% of div conatiner*/
+  /*text-align:left;*/
+    bottom: 0px;
+   padding-top: 0;
+  padding-bottom: 0;
+  font-family: "Muli", "Arial";
+}
+
+.carousel-fade .carousel-inner .carousel-item {
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .carousel-item,
+.carousel-fade .carousel-inner .active.carousel-item-left,
+.carousel-fade .carousel-inner .active.carousel-item-right {
+    opacity: 0;
+}
+
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-inner .carousel-item-prev.carousel-item-right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .carousel-item-next,
+.carousel-fade .carousel-inner .carousel-item-prev,
+.carousel-fade .carousel-inner .active.carousel-item-left,
+.carousel-fade .carousel-inner .active.carousel-item-right {
+    left: 0;
+    transform: translate3d(0, 0, 0);
+}
+
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
+.attender {
+	border-radius:1.5em;
+    position:relative;
+	right: 0;
+	background-color: #635869; /*dark purple*/
+	border-style: solid;
+    border-color: white;
+}
+
+.renter {
+	border-radius:1.5em;
+    position:relative;
+	left: 0;
+	background-color: #635869; /*dark purple*/	
+	border-style: solid;
+    border-color: white;
+   
+}
+
+.welcome {
+	width:10%;
+	visibility: hidden;
+	}
+
+@media (min-width: 576px) {
+	.attender {
+	position:absolute;
+	
+	}
+	
+	.renter {
+	position:absolute;
+	}
+	
+	.welcome {
+	width:80%;
+	visibility: visible;
+	}
+}
+
+@media (min-width: 768px){
+	.welcome {
+	width:70%;
+	visibility: visible;
+	}
+}
+
+@media (min-width: 992px) {
+	.welcome {
+	width:60%;
+	visibility: visible;
+	}
+}
+
+@media (min-width: 1200px) {
+	.welcome {
+	width:50%;
+	visibility: visible;
+	}
+}
+

@@ -1,0 +1,63 @@
+<% provide(:title, "Home") %>
+<div class="container">
+
+
+<div id="Parkcarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+ 
+  <div class="carousel-inner">
+    
+	<div class="carousel-item active">
+	    <%= image_tag("Danlaraacro.jpg", alt: "Acroyoga in first floor studio", class:"d-block mx-auto w-75") %>
+  	  <div class="carousel-caption d-none d-md-block">
+		<h6>Impromptu acro-yoga jam with Aerial instructor, Lara <small>(First Floor Studio)</small></h6>
+	  </div>
+    </div>
+    <div class="carousel-item">
+         <%= image_tag("Taekwondo.jpg", alt: "Taekwondo kids demo in basement studio", class:"d-block mx-auto w-75") %>
+	  <div class="carousel-caption d-none d-md-block">
+		<h6>Flexibility and big feet are key in Jayesh's Taekwondo class <small>(Basement Studio)</small></h6>
+	  </div>
+    </div>
+
+  </div>
+  
+   
+  <div class="carousel-controls mb-5">
+   <ol class="carousel-indicators">
+    <li data-target="#Parkcarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#Parkcarousel" data-slide-to="1"></li>
+ 
+  </ol>
+  
+  <a class="carousel-control-prev" href="#Parkcarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon bg-white" aria-hidden="true"></span>
+    <span class="sr-only text-secondary">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#Parkcarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon bg-white" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div>
+
+</div>
+
+</div>
+
+
+<div class="container mt-4">
+<div class="row">
+
+ <div class="col-sm-4 d-flex"><a class="btn btn-info mx-auto attender" href="Attend.html">Attend a Class</a></div>
+ <!--<div class="col-sm-4 text-center" >welcome</div>-->
+ 
+ <div class="col-sm-4" >
+      <%= image_tag("Welcome.png", alt: "Welcome", class:"d-block mx-auto welcome") %>
+  </div>
+ <div class="col-sm-4 d-flex"><a class="btn btn-info mx-auto renter" href="Rent.html">Rent The Space</a></div>
+
+</div>
+</div>
+
+
+
+
