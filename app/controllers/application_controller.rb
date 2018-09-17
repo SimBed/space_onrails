@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   
   def home
-    render html: "Space homepage"
+    
+  end
+  
+  def aerial
+    render html: "Aerial Class"
   end
 end
