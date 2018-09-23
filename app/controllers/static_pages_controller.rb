@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
   def aerial
   end
+  
+  def ashtanga
+  end
 end

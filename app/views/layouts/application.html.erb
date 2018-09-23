@@ -2,109 +2,16 @@
 <html>
   <head>
     <title><%= yield(:title) %> | SpaceOnrails</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/headmeta' %>
   </head>
 
   <body>
     
-    <nav class="navbar navbar-expand-md navbar-light bg-light" data-toggle="affix">
-    <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
-<!-- Brand/logo -->
-  <a class="navbar-brand" href="Home.html">
-  
-    <%= image_tag("SpaceLogo.png", alt: "logo", class:"Logonavbar") %>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#SpaceNavBar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-  
-   <div class="collapse navbar-collapse text-center" id="SpaceNavBar">
-  <ul class="navbar-nav">
- 
-    <!-- Dropdown -->
-    <li class="nav-item dropdown active">
-      <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-        THE STUDIO
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item active" href="Home.html">Home</a>
-        <a class="dropdown-item" href="Attend.html">Attend a Class</a>
-        <a class="dropdown-item" href="Rent.html">Rent The Space</a>
-		<a class="dropdown-item" href="Basement.html">Basement Studio</a>
-		<a class="dropdown-item" href="Firstfloor.html">First Floor Studio</a>
-		<a class="dropdown-item" href="Garden.html">Garden</a>
-      </div>
-    </li>
-	<!-- Link -->
-	<li class="nav-item">
-      <a class="nav-link" href="Timetable.html">TIMETABLE</a>
-    </li>
-	<!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-        CLASSES
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="Classcomp.html">CLASS COMPARE</a>
-        <a class="dropdown-item" href="Aerial.html">Aerial Silk & Hoop</a>
-		<a class="dropdown-item" href="Ashtanga.html">Ashtanga Yoga</a>
-        <a class="dropdown-item" href="Bodyq.html">Body Quest</a>
-		<a class="dropdown-item" href="Danceacize.html">Dance-A-Cize</a>
-		<a class="dropdown-item" href="Dancefit.html">Dance-Fit</a>
-		<a class="dropdown-item" href="Kidsaerial.html">Kids Aerial Silk & Hoop</a>		
-		<a class="dropdown-item" href="Pilatesflow.html">Pilates Flow</a>
-		<a class="dropdown-item" href="Pilatesfusion.html">Pilates Fusion</a>
-		<a class="dropdown-item" href="Pole1.html">Pole Dancing (S1)</a>
-		<a class="dropdown-item" href="Pound.html">Pound<span class="Trademark">&reg;</span> Fitness</a>
-		<a class="dropdown-item" href="Taekwondo.html">Taekwondo</a>
-		<a class="dropdown-item" href="Movement.html">The Movement</a>
-		<a class="dropdown-item" href="Yinyang.html">Yin & Yang Yoga</a>		
-		<a class="dropdown-item" href="Yogamobility.html">Yoga & Mobility</a>
-		<a class="dropdown-item" href="Yogaindi.html">Yoga Indi Evolve</a>
-		<a class="dropdown-item" href="Yogawdhara.html">Yoga with Dhara</a>
-		<a class="dropdown-item" href="Zumba.html">Zumba<span class="Trademark">&reg;</span> with Priti</a>
-      </div>
-    </li>
-	<li class="nav-item">
-      <a class="nav-link" href="Whatson.html">WHAT'S ON</a>
-    </li>
-	<li class="nav-item">
-      <a class="nav-link" href="Socmed.html">SOCIALMEDIA</a>
-    </li>
-	<li class="nav-item">
-      <a class="nav-link" href="Gallery1.html">GALLERY</a>
-    </li>
-	<li class="nav-item">
-      <a class="nav-link" href="Contact.html">CONTACT</a>
-    </li>
-	
-  </ul>
-  </div>
-  </div>
-</nav>
-
+    <%= render 'layouts/navbar' %>
 
     <%= yield %>
     
-    <div class="container">
-
-  <ul class="SocMedFoot">
-    <li> <a href="https://www.instagram.com/thespace.juhu/" target="_blank">
-           <%= image_tag("Insta.png", alt: "Instagram logo & link") %>
-    </a></li>
-    <li> <a href="https://www.facebook.com/TheSpace.Mumbai/timeline" target="_blank">
-           <%= image_tag("Face.png", alt: "Facebook logo & link") %>
-    </a></li>
-	<li><a href="https://twitter.com/thespacejuhu" target="_blank">
-            <%= image_tag("Twit.png", alt: "Twitter logo & link") %>
-    </a></li>
-   </ul>
-
-</div>
+    <%= render 'layouts/socmed' %>
 
   </body>
 </html>
