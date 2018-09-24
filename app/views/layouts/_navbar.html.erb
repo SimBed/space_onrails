@@ -64,6 +64,13 @@
         	<li class="nav-item">
         	  <%= link_to "CONTACT", '#', class:"nav-link" %>
           </li>
+          <li class="nav-item dropdown <%= active_page(yield(:dd_group),"Membership") %>">
+             <%= link_to "MEMBERSHIP", '#', class:"nav-link dropdown-toggle", "data-toggle" => "dropdown" %>
+
+             <div class="dropdown-menu">
+              <%= link_to "Signup", signup_path, class: ['dropdown-item', active_page(yield(:title),"Signup")] %>
+             </div>
+          </li>
 	
         </ul>
       </div>
