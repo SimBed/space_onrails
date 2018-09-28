@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
   
   def ashtanga
   end
+  
+  def login
+  end
 end

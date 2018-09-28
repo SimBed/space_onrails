@@ -8,10 +8,17 @@
   <body>
     
     <%= render 'layouts/navbar' %>
+       
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+<!--alt cleaner code-->        <%#= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
 
     <%= yield %>
     
     <%= render 'layouts/socmed' %>
+    
+    <%= debug(params) if Rails.env.development? %>
 
   </body>
 </html>
