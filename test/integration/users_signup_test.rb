@@ -27,6 +27,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template 'users/show'
+    assert is_logged_in?
     #test for flash..1st test is my test (brittler than 2nd test)
     assert_select "div.alert-success"
     assert_not flash.empty?
