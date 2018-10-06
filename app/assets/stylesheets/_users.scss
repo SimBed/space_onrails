@@ -1,7 +1,10 @@
 
 /* mixins, variables, etc. */
 
+/*scss not importing well...not sure where these hexadecimals come from..think the first one was sourced and the second one made up*/
 $gray-medium-light: #eaeaea;
+$gray-lighter:  #d8d8d8;
+
 
 
 /*taken from https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
@@ -101,4 +104,21 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+/*bootstrapped pagination not styling quite right*/
+.pagination ul li {
+  	padding-right: 1em;
 }
