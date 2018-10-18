@@ -6,9 +6,36 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
-      </h1>
+      </h1><br>
     </section>
+    <section class="package_form">
+<!--      previously current_user.admin? (but returns a nil error when
+testing (without logging in) as current_user nil in this case --> 
+            <% if current_user.try(:admin?) %>
+        <%= render 'shared/package_form' %>
+          <% end %>
+    </section>    
   </aside>
+  
+  <div class="col-md-8">
+    <h4>Space Packages <small>(<%= @user.packages.count%> open)</small></h4>
+    <ol class="packages">
+    <% @packages.each do |package| %>
+      <% unless package.equal?(@packages.last)%>
+      <li id="package-<%= package.id %>">
+        <span class="name"><%= package.name%> with <%= package.instructor%></span>
+            <% if current_user.try(:admin?) %>
+            <%= link_to "delete", package, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+            <% end %> <br>
+        <span class="packageinfo"><%= package.classes %> classes</span>
+        <span class="packageinfo">booked on <%= package.purchased_on %></span>
+      </li>
+      <% end %>
+    <% end %>
+    </ol>
+  </div>
+
 </div>
 </div>
 

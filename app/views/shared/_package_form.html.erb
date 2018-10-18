@@ -1,0 +1,19 @@
+<%= form_for(@package) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= f.hidden_field :member, :value => params[:id]%>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :instructor %>
+  <%= f.text_field :instructor, class: 'form-control' %>
+
+  <%= f.label :classes %>
+  <%= f.number_field :classes, class: 'form-control' %>
+
+  <%= f.label :purchased_on %>
+  <%= f.date_field :purchased_on, class: 'form-control' %>
+
+  <%= f.submit "Add Package", class: "btn btn-primary" %>
+<% end %>

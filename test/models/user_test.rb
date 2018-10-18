@@ -67,4 +67,12 @@ class UserTest < ActiveSupport::TestCase
   test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?('')
   end
+  
+  test "associated packages should be destroyed" do
+    @user.save
+    @user.packages.create!(name: "Aerial", instructor: "Lara", purchased_on: "2018-10-13", classes: 100)
+    assert_difference 'Package.count', -1 do
+      @user.destroy
+    end
+  end
 end

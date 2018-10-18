@@ -8,9 +8,13 @@ class UsersController < ApplicationController
   end
   
   def show
+    session[:member_id] = params[:id]
     @user = User.find(params[:id])
+    @packages = @user.packages
+    @package =  @user.packages.new
+
   end
-  
+
   def new
     @user = User.new
   end
@@ -27,11 +31,13 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
+    #@user assignment now doen in the filter
+    #@user = User.find(params[:id])
   end
   
   def update
-    @user = User.find(params[:id])
+    #@user assignment now doen in the filter
+    #@user = User.find(params[:id])
     if @user.update_attributes(user_params)
      flash[:success] = "Profile updated"
       redirect_to @user
@@ -55,24 +61,10 @@ class UsersController < ApplicationController
     
    # Before filters
 
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end    
-
     # Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
-    
-    # Confirms an admin user.
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end    
-  
+ 
 end

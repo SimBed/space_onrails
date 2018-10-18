@@ -1,0 +1,35 @@
+Aerial1:
+  name: Aerial
+  instructor: Lara
+  purchased_on: 2018-10-12
+  classes: 10
+  created_at: <%= 10.minutes.ago %>
+  user: michael
+
+
+BQ1:
+  name: BodyQuest
+  instructor: Priti
+  purchased_on: 2018-10-12
+  classes: 10
+  created_at: <%= 2.hours.ago %>
+  user: archer
+  
+  
+Aerial2:
+  name: Aerial
+  instructor: Lara
+  purchased_on: 2018-10-12
+  classes: 5
+  created_at: <%= 3.hours.ago %>
+  user: archer
+
+most_recent:
+  name: The Movement
+  instructor: Kunal
+  purchased_on: 2018-10-12
+  classes: 10
+  created_at: <%= Time.zone.now %>
+  user: lana
+
+

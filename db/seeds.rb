@@ -8,7 +8,7 @@ User.create!(name:  "Fluke",
              email: "example-4@railstutorial.org",
              password:              "foobar",
              password_confirmation: "foobar",
-             admin: false)
+             admin: true)
 
 0.upto(2) do |n|
   name  = Faker::Name.name
@@ -29,3 +29,13 @@ end
                password:              password,
                password_confirmation: password)
 end
+
+
+user = User.find(2)
+user.packages.create!(name: "Aerial", instructor: "Lara", purchased_on: "2018-10-13", classes: 10)
+user = User.find(3)
+user.packages.create!(name: "BodyQuest", instructor: "Priti", purchased_on: "2018-10-13", classes: 5)
+user.packages.create!(name: "Partner Yoga", instructor: "Gigi", purchased_on: "2018-10-14", classes: 2)
+
+
+
