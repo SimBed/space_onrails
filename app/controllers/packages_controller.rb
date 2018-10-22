@@ -1,5 +1,5 @@
 class PackagesController < ApplicationController
-  before_action :admin_user, only: [:create, :destroy]
+  before_action :admin_user, only: [:create, :destroy, :update]
 
   def create
     @package = User.find(params[:package][:member]).packages.build(package_params)
@@ -17,10 +17,27 @@ class PackagesController < ApplicationController
     flash[:success] = "Package deleted"
     redirect_to @user
   end
+  
+  def update
+
+    @user=User.find(session[:member_id])
+    @package = Package.find(params[:id])
+       
+    params[:package][:classes_taken] = params[:package][:classes_taken].split(',')
+
+    if @package.update_attributes(package_params)
+     flash[:success] = "Class added!"
+     redirect_to @package.user
+    else
+    flash[:warning] = "Class not added!"
+      redirect_to @user
+    end
+  end
 
   private
 
     def package_params
-      params.require(:package).permit(:name, :instructor, :purchased_on, :classes)
+      #https://stackoverflow.com/questions/21683219/using-update-attributes-with-column-type-of-array
+      params.require(:package).permit(:name, :instructor, :purchased_on, :classes,{:classes_taken => []})
     end
 end

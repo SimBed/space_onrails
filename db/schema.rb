@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2018_10_12_211520) do
     t.string "instructor"
     t.date "purchased_on"
     t.integer "classes"
+    t.string "classes_taken"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

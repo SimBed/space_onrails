@@ -1,0 +1,11 @@
+<%= form_for(@pac, url: object) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= f.hidden_field :member, :value => params[:id]%>
+
+  <%= f.label :classes_taken %>
+  <%#= f.date_field :classes_taken, class: 'form-control' %>
+  <%= f.text_field :classes_taken, class: 'form-control' %>
+  
+   <%= f.submit "Add Class", class: "btn btn-primary" %>
+<% end %>
