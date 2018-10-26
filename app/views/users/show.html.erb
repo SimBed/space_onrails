@@ -21,16 +21,44 @@ testing (without logging in) as current_user nil in this case -->
     <h4>Space Packages <small>(<%= @user.packages.count%> open)</small></h4>
     <ol class="packages">
     <% @packages.each do |package| %>
+    <% @pac = package %>
+        <%@attendance =  @pac.attendances.new %>
       <% unless package.equal?(@packages.last)%>
-      <li id="package-<%= package.id %>">
+      <li class="pacli">
         <span class="name"><%= package.name%> with <%= package.instructor%></span>
             <% if current_user.try(:admin?) %>
             <%= link_to "delete", package, method: :delete,
                                        data: { confirm: "You sure?" } %>
             <% end %> <br>
-        <span class="packageinfo"><%= package.classes %> classes</span>
-        <span class="packageinfo">booked on <%= package.purchased_on %></span>
+        <span class="packageinfo"><%= package.classes %> classes:
+       <%= package.attendances.count%> taken, <%= package.classes - package.attendances.count%> left
+        </span>
+        <span class="packageinfo">booked on: <%= package.purchased_on %></span>
+        <ol class="attendances">
+        <span class="packageinfo">attended on:<br>
+          <% package.attendances.each do |attendance| %>
+          <% unless attendance.equal?(package.attendances.last)%>
+             
+             <li class ="attli">
+               <%=date_reformat(attendance.date)%>
+            <%#=attendance.date.strftime("%a %b %d")%>
+            <%#=attendance.date%>
+            </li>
+            <% end %>
+
+ 
+
+          <%end%>
+        </span>
+        </ol>
+                                     <div style="clear:both;padding-top:10px;"></div>
+
+
+        <% if current_user.try(:admin?) %>
+        <%= render 'shared/attendance_form', object: @pac%>
+        <% end %>
       </li>
+
       <% end %>
     <% end %>
     </ol>
@@ -38,4 +66,3 @@ testing (without logging in) as current_user nil in this case -->
 
 </div>
 </div>
-

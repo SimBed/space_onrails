@@ -3,6 +3,7 @@ require 'test_helper'
 class UsersProfileTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
+    @package = packages(:Aerial1)
   end
 
   test "profile display" do
@@ -14,5 +15,9 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     @user.packages.each do |package|
       assert_match package.name, response.body
     end
+    @package.attendances.each do |attendance|
+      assert_select 'span.packageinfo', date: attendance.date
+     end
+    
   end
 end

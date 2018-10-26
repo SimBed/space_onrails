@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_12_211520) do
+ActiveRecord::Schema.define(version: 2018_10_22_190957) do
+
+  create_table "attendances", force: :cascade do |t|
+    t.date "date"
+    t.integer "package_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["package_id", "created_at"], name: "index_attendances_on_package_id_and_created_at"
+    t.index ["package_id"], name: "index_attendances_on_package_id"
+  end
 
   create_table "packages", force: :cascade do |t|
     t.string "name"
@@ -20,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_10_12_211520) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id", "created_at"], name: "index_packages_on_user_id_and_created_at"
+    t.index ["user_id", "purchased_on"], name: "index_packages_on_user_id_and_purchased_on"
     t.index ["user_id"], name: "index_packages_on_user_id"
   end
 

@@ -128,10 +128,16 @@ input {
 .packages {
   list-style: none;
   padding: 0;
-  li {
+}
+.pacli {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
+    margin-bottom: 5px;
+    clear:both;
   }
+  
+
+  
   .user {
     margin-top: 5em;
     padding-top: 0;
@@ -141,13 +147,14 @@ input {
     color: $gray-lighter;
     display: block;
     margin-left: 10px;
+
   }
   .gravatar {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
   }
-}
+
 
 aside {
   textarea {
@@ -161,4 +168,23 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+/*attendances*/
+
+.attendances {
+  list-style: none;
+  padding: 0;
+  }
+  
+  .attli {
+    padding: 1px 3px;
+    border: 1px solid $gray-lighter;
+    margin: 1px;
+    float:left;
+  }
+  
+ 
+.new_attendance {
+  clear:both;
 }

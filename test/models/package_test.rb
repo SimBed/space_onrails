@@ -46,4 +46,12 @@ class PackageTest < ActiveSupport::TestCase
   test "order should be most recent first" do
     assert_equal packages(:most_recent), Package.first
   end  
+  
+  test "associated attendances should be destroyed" do
+    @package.save
+    @package.attendances.create!(date: "2018-10-13")
+    assert_difference 'Package.count', -1 do
+      @package.destroy
+    end
+  end
 end

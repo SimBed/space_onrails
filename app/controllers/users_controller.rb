@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @packages = @user.packages
     @package =  @user.packages.new
-
   end
 
   def new
