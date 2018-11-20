@@ -5,7 +5,7 @@
 
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
-
+  
   <%= f.label :instructor %>
   <%= f.text_field :instructor, class: 'form-control' %>
 
@@ -14,6 +14,32 @@
 
   <%= f.label :purchased_on %>
   <%= f.date_field :purchased_on, class: 'form-control' %>
+  
+  
+<!-- radio buttons and their labels highly unwilling to
+stay on same line, this inelegance  is the best solution i could find after about a day of trial-->
+  <div class="valinput">
+    <%= f.label :validity %>
+    <%= f.number_field :validity_period %>
+  </div>
 
-  <%= f.submit "Add Package", class: "btn btn-primary" %>
+  <div class="radiolbl">
+     <%= f.label :validity_type, 'weeks' %>
+  </div>
+  
+  <div class="radiobtn">
+    <%= f.radio_button :validity_type, 'weeks', :checked => true %>
+  </div>
+
+  <div class="radiolbl">
+    <%= f.label :validity_type, 'months' %>
+  </div>
+  <div class="radiobtn">
+  <%= f.radio_button :validity_type, 'months'%>
+  </div>
+  
+   <%= f.submit "Add Package", class: "btn btn-primary" %>
 <% end %>
+
+
+ 

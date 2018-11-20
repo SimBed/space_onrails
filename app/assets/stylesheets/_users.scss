@@ -144,11 +144,15 @@ input {
   }
 
   .packageinfo {
-    color: $gray-lighter;
+    color: #707070;
     display: block;
     margin-left: 10px;
-
   }
+  
+    .packagename {
+ font-size:1.1em;
+  }
+  
   .gravatar {
     float: left;
     margin-right: 10px;
@@ -188,3 +192,20 @@ span.picture {
 .new_attendance {
   clear:both;
 }
+
+.valinput {
+  display:inline-block;
+  margin-right: 1em;
+  width:30%;
+}
+
+.radiolbl {
+  display:inline-block;
+}
+
+.radiobtn {
+  display:inline-block;
+  margin-right: 1em;
+  width: 1em;
+}
+

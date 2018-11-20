@@ -25,7 +25,7 @@ testing (without logging in) as current_user nil in this case -->
         <%@attendance =  @pac.attendances.new %>
       <% unless package.equal?(@packages.last)%>
       <li class="pacli">
-        <span class="name"><%= package.name%> with <%= package.instructor%></span>
+        <span class="packagename"><%= package.name%> with <%= package.instructor%></span>
             <% if current_user.try(:admin?) %>
             <%= link_to "delete", package, method: :delete,
                                        data: { confirm: "You sure?" } %>
@@ -33,7 +33,9 @@ testing (without logging in) as current_user nil in this case -->
         <span class="packageinfo"><%= package.classes %> classes:
        <%= package.attendances.count%> taken, <%= package.classes - package.attendances.count%> left
         </span>
-        <span class="packageinfo">booked on: <%= package.purchased_on %></span>
+        <span class="packageinfo">booked on <%= date_reformat(package.purchased_on) %></span>
+        <span class="packageinfo">valid for <%= package.validity_period %> <%= package.validity_type %>
+        until  <%= date_reformat(package.expiry) %></span>
         <ol class="attendances">
         <span class="packageinfo">attended on:<br>
           <% package.attendances.each do |attendance| %>

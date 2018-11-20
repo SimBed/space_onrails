@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_190957) do
+ActiveRecord::Schema.define(version: 2018_10_31_213505) do
 
   create_table "attendances", force: :cascade do |t|
     t.date "date"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 2018_10_22_190957) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "validity_type"
+    t.integer "validity_period"
+    t.date "expiry"
     t.index ["user_id", "purchased_on"], name: "index_packages_on_user_id_and_purchased_on"
     t.index ["user_id"], name: "index_packages_on_user_id"
   end
