@@ -25,7 +25,8 @@ class PackagesControllerTest < ActionDispatch::IntegrationTest
   test "admin should be able to create package for non-admin" do
     log_in_as(@admin_user)
     assert_difference 'Package.count', 1 do
-      post packages_path, params: { package: { member: @nonadmin_user_id, name: "Aerial", instructor: "Lara", purchased_on: "2018-10-13", classes: 10 } }
+      post packages_path, params: { package: { member: @nonadmin_user_id, name: "Aerial",
+      instructor: "Lara", purchased_on: "2018-10-13", classes: 10, validity_type: "months" , validity_period: 1 } }
     end
     get user_path(@nonadmin_user_id)
     assert_match @package.name, response.body

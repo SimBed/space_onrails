@@ -4,7 +4,8 @@ class PackageTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
     # previously before belongs_to/has_many association     ...= Package.new(...., user_id: @user.id)
-    @package = @user.packages.build(name: "Aerial", instructor: "Lara", purchased_on: "2018-10-13", classes: 10)
+    @package = @user.packages.build(name: "Aerial", instructor: "Lara", purchased_on: "2018-10-13",
+    classes: 10, validity_type: "months" , validity_period: 1)
   end
 
   test "should be valid" do

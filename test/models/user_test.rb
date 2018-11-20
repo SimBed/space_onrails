@@ -70,7 +70,7 @@ class UserTest < ActiveSupport::TestCase
   
   test "associated packages should be destroyed" do
     @user.save
-    @user.packages.create!(name: "Aerial", instructor: "Lara", purchased_on: "2018-10-13", classes: 100)
+    @user.packages.create!(name: "Aerial", instructor: "Lara", purchased_on: "2018-10-13", classes: 100,validity_type: "months" , validity_period: 1)
     assert_difference 'Package.count', -1 do
       @user.destroy
     end
