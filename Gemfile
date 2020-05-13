@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.1'
+ruby '2.5.1'
 
 
 gem 'rails', '~> 5.2.1'
 gem 'bcrypt'
 gem 'faker'
-gem 'will_paginate',           '3.1.6'
+gem 'will_paginate',           '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootstrap'
 gem 'jquery-rails'
